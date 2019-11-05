@@ -1,5 +1,29 @@
 class Sorter {
   constructor(public collection: number[]) {}
+
+  /**
+   * if we had a union type such as number[] | string
+   * Typescript would have allowed us to read only
+   * the properties which string and array have in common.
+   * 
+   * If we want to restore  access to
+   * the properties in a union type
+   * we can use type guards.
+   * 
+   * For number, string or boolean we use typeof
+   * for anything else we use instanceof 
+   * 
+   * Example:
+   * 
+   * if (this.collection instanceof Array) {
+   * }
+   * 
+   * OR
+   * 
+   * if (typeof this.collection === 'number')
+   * if (typeof this.collection === 'string')
+   * if (typeof this.collection === 'boolean')
+   */
   
   sort(): void {
     const { length } = this.collection;
