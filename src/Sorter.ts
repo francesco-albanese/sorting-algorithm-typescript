@@ -1,5 +1,3 @@
-import { NumbersCollection } from './NumbersCollection';
-
 export interface Sortable {
   length: number;
   compare(leftIndex: number, rightIndex: number): boolean;
