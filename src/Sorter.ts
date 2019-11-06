@@ -4,11 +4,16 @@ export interface Sortable {
   swap(leftIndex: number, rightIndex: number): void;
 }
 
-export class Sorter {
-  constructor(public collection: Sortable) {}
-  
+export abstract class Sorter {  
+  //marking properties as abstract
+  //will tell TypeScript that they 
+  //will exist eventually in a child class
+  abstract length: number;
+  abstract compare(leftIndex: number, rightIndex: number): boolean
+  abstract swap(leftIndex: number, rightIndex: number): void
+
   sort(): void {
-    const { length } = this.collection;
+    const { length } = this;
 
     for (let i = 0; i < length; i++) {
       /**
@@ -20,9 +25,9 @@ export class Sorter {
        * to sort it again in the future.
        */
       for (let j = 0; j < length - i - 1; j++) {
-        if (this.collection.compare(j, j + 1)) {
+        if (this.compare(j, j + 1)) {
           //shift element positions
-          this.collection.swap(j, j + 1);
+          this.swap(j, j + 1);
         }
       }
     }
