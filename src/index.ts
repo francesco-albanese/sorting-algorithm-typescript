@@ -10,13 +10,10 @@ linkedList.add(500);
 linkedList.add(-10);
 linkedList.add(-3);
 linkedList.add(4);
-const numberSorter = new Sorter(numbersCollection);
-const stringSorter = new Sorter(charactersCollection);
-const linkedListSorter = new Sorter(linkedList);
 
-numberSorter.sort();
-stringSorter.sort();
-linkedListSorter.sort();
+numbersCollection.sort();
+charactersCollection.sort();
+linkedList.sort();
 
 console.log(numbersCollection.data);
 console.log(charactersCollection.data);
